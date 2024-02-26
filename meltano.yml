@@ -1,0 +1,35 @@
+version: 1
+send_anonymous_usage_stats: false
+project_id: "tap-playstore"
+default_environment: test
+environments:
+- name: test
+plugins:
+  extractors:
+  - name: "tap-playstore"
+    namespace: "tap_playstore"
+    pip_url: -e .
+    capabilities:
+    - state
+    - catalog
+    - discover
+    - about
+    - stream-maps
+    config:
+      start_date: '2024-01-01T00:00:00Z'
+      service_account_json_file: $GOOGLE_PLAY_CREDENTIALS_FILE
+      bucket_name: $GOOGLE_PLAY_BUCKET
+    settings:
+    - name: service_account_json_file
+      kind: string
+    - name: service_account_json_str
+      kind: string
+    - name: bucket_name
+      kind: string
+    - name: start_date
+      kind: string
+
+  loaders:
+  - name: target-jsonl
+    variant: andyh1203
+    pip_url: target-jsonl

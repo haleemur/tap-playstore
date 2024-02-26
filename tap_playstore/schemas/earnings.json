@@ -1,0 +1,87 @@
+{
+    "tap_stream_id": "earnings",
+    "stream": "earnings",
+    "key_properties": [
+        "_bucket",
+        "_file_path",
+        "_file_lineno"
+    ],
+    "properties": {
+        "description": {
+            "type": ["null", "string"]
+        },
+        "transaction_date": {
+            "type": ["null", "string"]
+        },
+        "transaction_time": {
+            "type": ["null", "string"]
+        },
+        "tax_type": {
+            "type": ["null", "string"]
+        },
+        "transaction_type": {
+            "type": ["null", "string"]
+        },
+        "refund_type": {
+            "type": ["null", "string"]
+        },
+        "product_title": {
+            "type": ["null", "string"]
+        },
+        "product_id": {
+            "type": ["null", "string"]
+        },
+        "product_type": {
+            "type": ["null", "integer"]
+        },
+        "sku_id": {
+            "type": ["null", "string"]
+        },
+        "hardware": {
+            "type": ["null", "string"]
+        },
+        "buyer_country": {
+            "type": ["null", "string"]
+        },
+        "buyer_state": {
+            "type": ["null", "string"]
+        },
+        "buyer_postal_code": {
+            "type": ["null", "string"]
+        },
+        "buyer_currency": {
+            "type": ["null", "string"]
+        },
+        "amount_buyer_currency": {
+            "type": ["null", "string"]
+        },
+        "currency_conversion_rate": {
+            "type": ["null", "number"]
+        },
+        "merchant_currency": {
+            "type": ["null", "string"]
+        },
+        "amount_merchant_currency": {
+            "type": ["null", "string"]
+        },
+        "base_plan_id": {
+            "type": ["null", "string"]
+        },
+        "offer_id": {
+            "type": ["null", "string"]
+        },
+        "_file_path": {
+            "type": "string"
+        },
+        "_file_lineno": {
+            "type": "integer"
+        },
+        "_file_updated_at": {
+            "type": "string", "format": "date-time"
+        },
+        "_bucket": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
