@@ -8,13 +8,11 @@ The following streams can be integrated using this tap:
 * stats_by_dimension_gcm
 * stats_by_dimension_installs
 * stats_by_dimension_ratings
-* stats_by_dimension_ratings_v2
 * stats_by_dimension_retained_installers
 * stats_overview_crashes
 * stats_overview_gcm
 * stats_overview_installs
 * stats_overview_ratings
-* stats_overview_ratings_v2
 * reviews
 * store_performance_country
 * store_performance_traffic_source
@@ -39,7 +37,7 @@ pipx install tap-playstore
 Install from GitHub:
 
 ```bash
-pipx install git+https://github.com/ORG_NAME/tap-playstore.git@main
+pipx install git+https://github.com/haleemur/tap-playstore.git@main
 ```
 
 ## Capabilities
@@ -60,11 +58,12 @@ pipx install git+https://github.com/ORG_NAME/tap-playstore.git@main
 | service_account_json_file| False    | None    | Google Cloud Service Account JSON file |
 | service_account_json_str | False    | None    | Google Cloud Service Account JSON string |
 | start_date               | True     | None    | The earliest record date to sync |
-| end_date                 | False    | None    | The most recent record date to sync |
 | bucket_name              | True     | None    | The GCS Bucket where Play Console Reports are stored. |
 | stream_maps              | False    | None    | Config object for stream maps capability. For more information check out [Stream Maps](https://sdk.meltano.com/en/latest/stream_maps.html). |
 | stream_map_config        | False    | None    | User-defined config values to be used within map expressions. |
 
+
+**NOTE: At least one of [`service_account_json_file`, `service_account_json_str`] are required.**
 
 A full list of supported settings and capabilities for this
 tap is available by running:
@@ -78,12 +77,6 @@ tap-playstore --about
 This Singer tap will automatically import any environment variables within the working directory's
 `.env` if the `--config=ENV` is provided, such that config values will be considered if a matching
 environment variable is set either in the terminal context or in the `.env` file.
-
-### Source Authentication and Authorization
-
-<!--
-Developer TODO: If your tap requires special access on the source system, or any special authentication requirements, provide those here.
--->
 
 ## Usage
 
@@ -116,7 +109,8 @@ Tests require a `test_config.json` file to be present. Currently, running tests 
 **TODO:** write proper mocks for google cloud storage.
 
 The `test_config.json` file should mimic the structure of `sample_config.json` file.
-```
+
+```json
 {
     "start_date": "2024-01-01",
     "bucket_name": "pubsite_prod_rev_00000000000123456789",
@@ -141,12 +135,6 @@ poetry run tap-playstore --help
 
 _**Note:** This tap will work in any Singer environment and does not require Meltano.
 Examples here are for convenience and to streamline end-to-end orchestration scenarios._
-
-<!--
-Developer TODO:
-Your project comes with a custom `meltano.yml` project file already created. Open the `meltano.yml` and follow any "TODO" items listed in
-the file.
--->
 
 Next, install Meltano (if you haven't already) and any needed plugins:
 
