@@ -28,7 +28,7 @@ class TapPlayStore(Tap):
         ),
         th.Property(
             "service_account_json_str",
-            th.ArrayType(th.StringType),
+            th.StringType,
             required=False,
             secret=True,
             description="Google Cloud Service Account JSON string",
