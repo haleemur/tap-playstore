@@ -1,0 +1,43 @@
+{
+    "tap_stream_id": "stats_by_dimension_ratings",
+    "stream": "stats_by_dimension_ratings",
+    "key_properties": [
+        "_bucket",
+        "_file_path",
+        "_file_lineno"
+    ],
+    "replication_key": "_file_updated_at",
+    "properties": {
+        "date": {
+            "type": ["null", "string"], "format": "date"
+        },
+        "package_name": {
+            "type": ["null", "string"]
+        },
+        "dimension_value": {
+            "type": ["null", "string"]
+        },
+        "dimension_name": {
+            "type": "string"
+        },
+        "daily_average_rating": {
+            "type": ["null", "string"]
+        },
+        "total_average_rating": {
+            "type": ["null", "number"]
+        },
+        "_file_path": {
+            "type": "string"
+        },
+        "_file_lineno": {
+            "type": "integer"
+        },
+        "_file_updated_at": {
+            "type": "string", "format": "date-time"
+        },
+        "_bucket": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}

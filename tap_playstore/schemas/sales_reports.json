@@ -1,0 +1,82 @@
+{
+    "tap_stream_id": "sales_reports",
+    "stream": "sales_reports",
+    "key_properties": [
+        "_bucket",
+        "_file_path",
+        "_file_lineno"
+    ],
+    "properties": {
+        "order_number": {
+            "type": ["null", "string"]
+        },
+        "order_charged_date": {
+            "type": ["null", "string"], "format": "date"
+        },
+        "order_charged_timestamp": {
+            "type": ["null", "integer"]
+        },
+        "financial_status": {
+            "type": ["null", "string"]
+        },
+        "device_model": {
+            "type": ["null", "string"]
+        },
+        "product_title": {
+            "type": ["null", "string"]
+        },
+        "product_id": {
+            "type": ["null", "string"]
+        },
+        "product_type": {
+            "type": ["null", "string"]
+        },
+        "sku_id": {
+            "type": ["null", "string"]
+        },
+        "currency_of_sale": {
+            "type": ["null", "string"]
+        },
+        "item_price": {
+            "type": ["null", "string"]
+        },
+        "taxes_collected": {
+            "type": ["null", "string"]
+        },
+        "charged_amount": {
+            "type": ["null", "string"]
+        },
+        "city_of_buyer": {
+            "type": ["null", "string"]
+        },
+        "state_of_buyer": {
+            "type": ["null", "string"]
+        },
+        "postal_code_of_buyer": {
+            "type": ["null", "string"]
+        },
+        "country_of_buyer": {
+            "type": ["null", "string"]
+        },
+        "base_plan_id": {
+            "type": ["null", "string"]
+        },
+        "offer_id": {
+            "type": ["null", "string"]
+        },
+        "_file_path": {
+            "type": "string"
+        },
+        "_file_lineno": {
+            "type": "integer"
+        },
+        "_file_updated_at": {
+            "type": "string", "format": "date-time"
+        },
+        "_bucket": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+
+}

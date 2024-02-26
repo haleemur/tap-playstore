@@ -1,0 +1,5 @@
+{
+    "start_date": "2024-01-01",
+    "bucket_name": "pubsite_prod_rev_00000000000123456789",
+    "service_account_json_file": "test_credentials.json"
+}
