@@ -25,6 +25,11 @@ _note: the streams prefixed with `stats_by_dimension` consolidate all reports by
 
 Built with the [Meltano Tap SDK](https://sdk.meltano.com) for Singer Taps.
 
+## Project Home
+
+[https://github.com/haleemur/tap-playstore](https://github.com/haleemur/tap-playstore)
+
+The project's source can be viewed on [github](https://github.com/haleemur/tap-playstore)
 
 ## Installation
 
