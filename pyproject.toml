@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "tap-playstore"
-version = "0.0.1"
+version = "0.1.1"
 description = "`tap-playstore` is a Singer tap for Google PlayStore Console Reports, built with the Meltano Singer SDK."
 readme = "README.md"
 authors = ["Haleemur Ali <haleemur@gmail.com>"]
