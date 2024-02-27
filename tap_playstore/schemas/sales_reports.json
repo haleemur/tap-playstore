@@ -1,11 +1,4 @@
 {
-    "tap_stream_id": "sales_reports",
-    "stream": "sales_reports",
-    "key_properties": [
-        "_bucket",
-        "_file_path",
-        "_file_lineno"
-    ],
     "properties": {
         "order_number": {
             "type": ["null", "string"]

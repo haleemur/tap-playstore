@@ -28,7 +28,7 @@ class TapPlayStore(Tap):
         ),
         th.Property(
             "service_account_json_str",
-            th.ArrayType(th.StringType),
+            th.StringType,
             required=False,
             secret=True,
             description="Google Cloud Service Account JSON string",
@@ -45,7 +45,10 @@ class TapPlayStore(Tap):
             th.DateTimeType,
             required=False,
             secret=False,
-            description="The most recent record date to sync",
+            description=(
+                "The most recent record date to sync. "
+                "NOTE: this has not been implemented yet."
+            ),
         ),
         th.Property(
             "bucket_name",

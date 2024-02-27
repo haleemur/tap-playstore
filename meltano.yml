@@ -17,7 +17,7 @@ plugins:
     - stream-maps
     config:
       start_date: '2024-01-01T00:00:00Z'
-      service_account_json_file: $GOOGLE_PLAY_CREDENTIALS_FILE
+      service_account_json_str: $GOOGLE_PLAY_CREDENTIALS
       bucket_name: $GOOGLE_PLAY_BUCKET
     settings:
     - name: service_account_json_file
@@ -28,7 +28,8 @@ plugins:
       kind: string
     - name: start_date
       kind: string
-
+    select:
+      - reviews
   loaders:
   - name: target-jsonl
     variant: andyh1203
