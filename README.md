@@ -1,6 +1,6 @@
-# tap-playstore
+# tap-playstore [Google Play (GCS Export)]
 
-`tap-playstore` is a Singer tap to extract Google Play Store Console Reports.
+`tap-playstore` is a Singer tap to extract Google Play Store Console Reports that are available on google cloud storage.
 
 The following streams can be integrated using this tap:
 * stats_by_dimension_buyers_7d
