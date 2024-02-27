@@ -25,14 +25,14 @@ packages = [
 [tool.poetry.dependencies]
 python = ">=3.8,<3.13"
 importlib-resources = { version = "==6.1.*", python = "<3.9" }
-singer-sdk = { version="~=0.35.2" }
+singer-sdk = { version=">=0.35.2,<0.37.0" }
 fs-s3fs = { version = "~=1.1.1", optional = true }
 google-auth = "^2.28.1"
 google-cloud-storage = "^2.14.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = ">=7.4.0"
-singer-sdk = { version="~=0.35.2", extras = ["testing"] }
+singer-sdk = { version=">=0.35.2,<0.37.0", extras = ["testing"] }
 pre-commit = "2.21.0"
 meltano = "^3.3.1"
 
