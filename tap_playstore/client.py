@@ -32,7 +32,9 @@ class PlayStoreStream(Stream):
     """
 
     replication_method = REPLICATION_INCREMENTAL
+
     replication_key = "_file_updated_at"
+    primary_keys = ("_bucket", "_file_path", "_file_lineno")
 
     def _yield_rows_from_file(
         self,
@@ -42,23 +44,18 @@ class PlayStoreStream(Stream):
     ) -> Iterable[dict]:
         """Yield processed rows from csv file as dict."""
         fields = [re.sub(r"(\W|\s)+", "_", fn.lower()).rstrip("_") for fn in header]
+        static_ = static_fields.copy()
+        typemap = {
+            f: t
+            for f, t in self._typemap_from_string.items()
+            if f in fields and t not in ["string", "null-string"]
+        }
         for i, row in enumerate(reader):
-            context = {
-                "fields": set(fields),
-                "static_fields": static_fields,
-                "_file_lineno": i,
-            }
-            rec = self.convert_types_and_add_metadata(dict(zip(fields, row)), context)
-            yield rec
+            static_["_file_lineno"] = i
+            yield self.convert_types(dict(zip(fields, row)), typemap) | static_
 
-    def convert_types_and_add_metadata(
-        self, row: dict[str, Any], context: dict
-    ) -> dict[str, Any]:
-        """Post process string values read from the CSV files."""
-        fields = context["fields"]
-        static_fields = context["static_fields"]
-        file_lineno = {"_file_lineno": context["_file_lineno"]}
-        typemap = {f: t for f, t in self._typemap_from_string.items() if f in fields}
+    def convert_types(self, row: dict[str, Any], typemap: dict) -> dict[str, Any]:
+        """Convert string values read from the CSV files."""
         for field, type_ in typemap.items():
             if type_ == "integer":
                 row[field] = int(row[field])
@@ -68,11 +65,9 @@ class PlayStoreStream(Stream):
                 row[field] = float(row["field"])
             elif type_ == "null-number":
                 row[field] = None if row[field] == "" else float(row[field])
-            elif type_ in {"string", "null-string"}:
-                continue
             else:
                 raise NotImplementedError
-        return row | static_fields | file_lineno
+        return row
 
     @property
     def _typemap_from_string(self) -> dict[str, str]:

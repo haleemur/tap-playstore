@@ -1,6 +1,4 @@
 {
-    "tap_stream_id": "reviews",
-    "stream": "reviews",
     "key_properties": [
         "_bucket",
         "_file_path",
@@ -23,13 +21,13 @@
             "type": ["null", "string"]
         },
         "review_submit_date_and_time": {
-            "type": ["null", "string"]
+            "type": ["null", "string"], "format": "date-time"
         },
         "review_submit_millis_since_epoch": {
             "type": ["null", "integer"]
         },
         "review_last_update_date_and_time": {
-            "type": ["null", "string"]
+            "type": ["null", "string"], "format": "date-time"
         },
         "review_last_update_millis_since_epoch": {
             "type": ["null", "integer"]

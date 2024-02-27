@@ -1,12 +1,4 @@
 {
-    "tap_stream_id": "subscriptions_country",
-    "stream": "subscriptions_country",
-    "key_properties": [
-        "_bucket",
-        "_file_path",
-        "_file_lineno"
-    ],
-    "replication_key": "_file_updated_at",
     "type": "object",
     "properties": {
         "date": {

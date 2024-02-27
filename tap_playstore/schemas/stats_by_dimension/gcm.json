@@ -1,13 +1,4 @@
 {
-    "tap_stream_id": "stats_by_dimension_gcm",
-    "stream": "stats_by_dimension_gcm",
-    "key_properties": [
-        "_bucket",
-        "_file_path",
-        "_file_lineno"
-    ],
-    "replication_key": "_file_updated_at",
-
     "properties": {
         "date": {
             "type": ["null", "string"], "format": "date"
