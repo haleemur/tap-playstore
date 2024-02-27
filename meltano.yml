@@ -29,7 +29,25 @@ plugins:
     - name: start_date
       kind: string
     select:
-      - reviews
+      # uncomment as necessary
+      # - reviews.*
+      # - stats_by_dimension_buyers_7d.*
+      # - stats_by_dimension_crashes.*
+      # - stats_by_dimension_gcm.*
+      - stats_by_dimension_installs.*
+      # - stats_by_dimension_ratings.*
+      # - stats_by_dimension_retained_installers.*
+      # - stats_overview_crashes.*
+      # - stats_overview_gcm.*
+      - stats_overview_installs.*
+      # - stats_overview_ratings.*
+      # - store_performance_country.*
+      # - store_performance_traffic_source.*
+      # - subscriptions_country.*
+      - earnings.*
+      # - play_balance_krw.*
+      # - sales_reports.*
+
   loaders:
   - name: target-jsonl
     variant: andyh1203
