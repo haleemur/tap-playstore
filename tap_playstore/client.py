@@ -52,7 +52,9 @@ class PlayStoreStream(Stream):
         }
         for i, row in enumerate(reader):
             static_["_file_lineno"] = i
-            yield self.convert_types(dict(zip(fields, row)), typemap) | static_
+            rec = self.convert_types(dict(zip(fields, row)), typemap)
+            # use {**rec, **static_} instead of rec | static for py3.8 support
+            yield {**rec, **static_}
 
     def convert_types(self, row: dict[str, Any], typemap: dict) -> dict[str, Any]:
         """Convert string values read from the CSV files."""
